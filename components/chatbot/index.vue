@@ -38,7 +38,7 @@ const sendMessage = async () => {
 <template>
   <h1 class="text-3xl text-center font-bold mb-10">Déméter</h1>
   <div class="flex flex-col items-center justify-center">
-    <div class="w-4/5">
+    <ScrollArea class="w-4/5 h-[60vh] px-6">
       <Card
         v-for="(chat, idx) in chatTree"
         :key="idx"
@@ -49,8 +49,8 @@ const sendMessage = async () => {
           <div>{{ chat.content }}</div>
         </CardContent>
       </Card>
-    </div>
-    <div class="grid w-full gap-2 px-32 fixed bottom-0 pb-12 bg-white">
+    </ScrollArea>
+    <div class="grid w-full gap-2 px-32 bg-white">
       <Select v-model="aiModel">
         <SelectTrigger class="w-[180px]">
           <SelectValue placeholder="Select a model" />
